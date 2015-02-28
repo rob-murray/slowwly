@@ -6,7 +6,7 @@ module Slowly
       set :views, 'app/views'
       set :public_folder, 'app/public'
 
-      enable :sessions, :logging
+      enable :logging
     end
 
     helpers do
