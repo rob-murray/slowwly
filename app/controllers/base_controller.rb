@@ -2,6 +2,8 @@ require 'sinatra'
 
 module Slowwly
   class BaseController < Sinatra::Base
+    helpers Sinatra::ContentFor
+
     configure do
       set :views, 'app/views'
       set :public_folder, 'app/public'
