@@ -1,6 +1,6 @@
 require_relative 'base_controller'
 
-module Slowly
+module Slowwly
   class RootController < BaseController
     get '/' do
       erb :root

@@ -1,4 +1,4 @@
-module Slowly
+module Slowwly
   class << self
     def default_delay
       1000

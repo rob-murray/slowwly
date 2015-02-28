@@ -3,7 +3,7 @@ require 'sinatra/base'
 
 Dir.glob('./app/{controllers,models}/*.rb').each { |file| require file }
 
-module Slowly
+module Slowwly
   class App < Sinatra::Application
     configure :production do
       # ...
@@ -14,7 +14,7 @@ module Slowly
       set :show_exceptions, true
     end
 
-    use Slowly::RootController
-    use Slowly::DelayController
+    use Slowwly::RootController
+    use Slowwly::DelayController
   end
 end

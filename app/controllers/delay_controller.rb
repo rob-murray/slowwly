@@ -1,6 +1,6 @@
 require_relative 'base_controller'
 
-module Slowly
+module Slowwly
   class DelayController < BaseController
     get '/delay/:delay/*' do |delay, _rest|
       request_params = DelayRequest.new(delay, params[:splat].first)

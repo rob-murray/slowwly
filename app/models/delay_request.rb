@@ -1,6 +1,6 @@
 require 'uri'
 
-module Slowly
+module Slowwly
   class DelayRequest
     attr_reader :delay, :url
 
@@ -20,7 +20,7 @@ module Slowly
     private
 
     def parse_delay(value)
-      @delay = Integer(value) rescue Slowly.default_delay
+      @delay = Integer(value) rescue Slowwly.default_delay
     end
 
     def parse_url(url)

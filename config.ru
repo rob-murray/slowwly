@@ -3,6 +3,6 @@ require 'bundler'
 Bundler.require(:default, ENV['RACK_ENV'].to_sym)
 
 require './app'
-require './app/slowly'
+require './app/slowwly'
 
-run Slowly::App
+run Slowwly::App

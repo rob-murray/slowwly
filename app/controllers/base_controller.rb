@@ -1,6 +1,6 @@
 require 'sinatra'
 
-module Slowly
+module Slowwly
   class BaseController < Sinatra::Base
     configure do
       set :views, 'app/views'
