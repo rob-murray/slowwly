@@ -64,6 +64,25 @@ Content-Type: text/html;charset=utf-8
 Location: http://myapi.com/endpoint
 Content-Length: 0
 # etc
+
+# an example get request with follow redirect enabled
+$ curl -i -L http://127.0.0.1:9292/delay/1000/http://google.co.uk
+HTTP/1.1 302 Found
+Content-Type: text/html;charset=utf-8
+Location: http://google.co.uk
+Content-Length: 0
+# etc
+
+HTTP/1.1 301 Moved Permanently
+Location: http://www.google.co.uk/
+Content-Type: text/html; charset=UTF-8
+# etc
+
+HTTP/1.1 302 Found
+Location: https://www.google.co.uk/?gws_rd=ssl
+Cache-Control: private
+Content-Type: text/html; charset=UTF-8
+# etc
   </pre>
 
   <%= render_partial :footer %>
