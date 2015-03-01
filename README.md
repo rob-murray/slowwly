@@ -29,7 +29,7 @@ Feel free to run it anywhere you need.
 
 Build a URL with the following params:
 
-```
+```bash
 http://{host}/delay/{delay_time}/{url}
 ```
 
@@ -52,6 +52,26 @@ http://{host}/delay/{delay_time}/{url}
     <dt>POST</dt>
     <dd>Responds with HTTP<code>307</code></dd>
 </dl>
+
+#### Examples
+
+```bash
+# a simple get request with 1 second delay
+$ curl -i http://127.0.0.1:9292/delay/1000/http://google.co.uk
+HTTP/1.1 302 Found
+Content-Type: text/html;charset=utf-8
+Location: http://google.co.uk
+Content-Length: 0
+# etc
+
+# a post request with some data and a 3 second delay
+$ curl -i --data "param1=value1" http://localhost:9292/delay/3000/http://myapi.com/endpoint
+HTTP/1.1 307 Temporary Redirect
+Content-Type: text/html;charset=utf-8
+Location: http://myapi.com/endpoint
+Content-Length: 0
+# etc
+```
 
 ### Contributions
 
