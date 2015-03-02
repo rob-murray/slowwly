@@ -1,5 +1,5 @@
 GIT
-  remote: git@github.com:sinatra/sinatra-contrib.git
+  remote: git://github.com/sinatra/sinatra-contrib.git
   revision: e80c8635c7350f9c200e718a536b2a11b6cc5afe
   specs:
     sinatra-contrib (1.4.2)
@@ -11,7 +11,7 @@ GIT
       tilt (~> 1.3)
 
 GIT
-  remote: git@github.com:sinatra/sinatra.git
+  remote: git://github.com/sinatra/sinatra.git
   revision: be9c18ac44214069f4709ced6da65abba9501d24
   specs:
     sinatra (1.4.5)
