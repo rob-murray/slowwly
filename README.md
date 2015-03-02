@@ -11,6 +11,15 @@ This can be used to simulate timeouts so that you can see how your application r
 
 There are other services doing this but **Slowwly** will respond to `POST` requests as well as `GET`. 
 
+#### Mantra
+
+This project aims to;
+
+* Provide delayed response for at least `GET` and `POST` requests
+* Not intefere too much with calling code. We don't want users to have to modify request params to use this, editing code just to test something is a pain - the request host or URL should be the minimum required change to use this.
+* Return redirect after delay; It is useful to actually see how you code works with the real response returned after a delay. Note: obviously requires clients to follow redirects ;)
+
+
 ### Getting started
 
 It's a simple Rack app so you can run it anywhere;
