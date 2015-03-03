@@ -2,6 +2,7 @@
 
 #### A test service to mock a slow http response.
 
+[![Build Status](https://travis-ci.org/rob-murray/slowwly.svg)](https://travis-ci.org/rob-murray/slowwly)
 
 ### Description
 
@@ -9,7 +10,7 @@ A test service to mock a slow api response - simply prepend your **Slowwly** URL
 
 This can be used to simulate timeouts so that you can see how your application responds with slow API requests or if it fails where you expect it to fail.
 
-There are other services doing this but **Slowwly** will respond to `POST` requests as well as `GET`. 
+There are other services doing this but **Slowwly** will respond to `POST` requests as well as `GET`.
 
 Example URL with request delayed by 2 seconds - `http://127.0.0.1:9292/delay/2000/http://google.co.uk`
 
