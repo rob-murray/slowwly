@@ -9,7 +9,7 @@ describe Slowwly::DelayController do
         end
 
         it 'responds with redirect' do
-          expect(last_response).to be_redirect
+          expect(last_response.status).to eq(302)
         end
 
         it 'responds with correct header value' do
@@ -34,7 +34,7 @@ describe Slowwly::DelayController do
       end
 
       it 'responds with redirect' do
-        expect(last_response).to be_redirect
+        expect(last_response.status).to eq(302)
       end
 
       it 'responds with correct header value' do
@@ -49,7 +49,7 @@ describe Slowwly::DelayController do
         end
 
         xit 'responds with redirect' do
-          expect(last_response).to be_redirect
+          expect(last_response.status).to eq(302)
         end
 
         xit 'responds with correct header value' do
@@ -77,7 +77,7 @@ describe Slowwly::DelayController do
         end
 
         it 'responds with redirect' do
-          expect(last_response).to be_redirect
+          expect(last_response.status).to eq(307)
         end
 
         it 'responds with correct header value' do
@@ -90,7 +90,7 @@ describe Slowwly::DelayController do
           end
 
           it 'does not moan about bad request, invalid params, blah' do
-            expect(last_response).to be_redirect
+            expect(last_response.status).to eq(307)
           end
         end
       end
@@ -112,7 +112,7 @@ describe Slowwly::DelayController do
       end
 
       it 'responds with redirect' do
-        expect(last_response).to be_redirect
+        expect(last_response.status).to eq(307)
       end
 
       it 'responds with correct header value' do
@@ -127,7 +127,7 @@ describe Slowwly::DelayController do
         end
 
         xit 'responds with redirect' do
-          expect(last_response).to be_redirect
+          expect(last_response.status).to eq(307)
         end
 
         xit 'responds with correct header value' do
