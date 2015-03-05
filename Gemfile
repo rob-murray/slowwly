@@ -14,4 +14,6 @@ group :development, :test do
   gem "rack-test"
   gem "rspec"
   gem "rspec-html-matchers"
+  gem "pry"
+  gem "pry-byebug"
 end
