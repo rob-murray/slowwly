@@ -6,6 +6,7 @@ gem "rake", "~> 10.1"
 gem "tilt", "~> 1.3"
 gem "sinatra", "~> 1.4", github: "sinatra/sinatra"
 gem "sinatra-contrib", "~> 1.4", github: "sinatra/sinatra-contrib"
+gem "virtus"
 
 group :development, :test do
   gem "coveralls", require: false
