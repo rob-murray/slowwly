@@ -1,6 +1,7 @@
 require 'sinatra'
 require 'sinatra/base'
 require 'sinatra/content_for'
+require 'virtus'
 
 Dir.glob('./app/{controllers,models}/*.rb').each { |file| require file }
 

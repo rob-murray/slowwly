@@ -1,31 +1,26 @@
 require 'uri'
+require_relative '../slowwly'
 
 module Slowwly
   class DelayRequest
-    attr_reader :delay, :url
+    include Virtus.model
 
-    def initialize(delay, url)
-      parse_delay(delay)
-      parse_url(url)
-    end
+    attribute :url, String
+    attribute :delay, Integer, strict: true, default: Slowwly.default_delay
 
     def delay_secs
       delay / 1000
     end
 
-    def to_s
-      "<#{self.class.name}: delay: #{delay}, url: #{url}>"
+    # this seems like an hack to use the default when coercion fails
+    def delay=(value)
+      super(value) rescue Slowwly.default_delay
     end
 
-    private
-
-    def parse_delay(value)
-      @delay = Integer(value) rescue Slowwly.default_delay
-    end
-
-    def parse_url(url)
-      escaped_url = ::URI.unescape(url)
-      @url = escaped_url.sub(/:\//, '://')
+    def url=(value)
+      return unless value
+      escaped_url = URI.unescape(value)
+      super escaped_url.sub(/:\//, '://')
     end
   end
 end
