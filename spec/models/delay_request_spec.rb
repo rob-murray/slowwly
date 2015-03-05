@@ -52,6 +52,14 @@ describe Slowwly::DelayRequest do
           expect(subject.delay_secs).to eq(3)
         end
       end
+
+      context 'given delay not multiple of 1000' do
+        let(:new_params) { { delay: 1500, url: 'http://google.co.uk' } }
+
+        it 'returns decimal value in seconds' do
+          expect(subject.delay_secs).to eq(1.5)
+        end
+      end
     end
   end
 end

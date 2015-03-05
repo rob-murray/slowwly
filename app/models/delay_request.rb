@@ -9,7 +9,7 @@ module Slowwly
     attribute :delay, Integer, strict: true, default: Slowwly.default_delay
 
     def delay_secs
-      delay / 1000
+      delay.to_f / 1000
     end
 
     # this seems like an hack to use the default when coercion fails
