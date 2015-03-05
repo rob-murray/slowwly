@@ -3,7 +3,7 @@ require_relative 'base_controller'
 module Slowwly
   class DelayController < BaseController
     get '/delay/:delay/*' do |delay, _rest|
-      request_params = DelayRequest.new(delay, params[:splat].first)
+      set_request_params(delay)
       log_request(request_params)
 
       sleep request_params.delay_secs
@@ -11,7 +11,7 @@ module Slowwly
     end
 
     post '/delay/:delay/*' do |delay, _rest|
-      request_params = DelayRequest.new(delay, params[:splat].first)
+      set_request_params(delay)
       log_request(request_params)
 
       sleep request_params.delay_secs
@@ -19,6 +19,15 @@ module Slowwly
     end
 
     private
+
+    attr_reader :request_params
+
+    def set_request_params(delay)
+      @request_params ||= DelayRequest.new(
+        delay: delay,
+        url: params[:splat].first
+      )
+    end
 
     def log_request(request_params)
       logger.info "Handle #{request.request_method} request: #{request_params}"
