@@ -2,21 +2,16 @@ require_relative 'base_controller'
 require 'byebug'
 module Slowwly
   class DelayController < BaseController
-    get '/delay/?:delay?/url/*' do |*args|
+    respond_to_request = lambda do
       set_request_params
       log_request
 
       sleep request_params.delay_secs
-      redirect request_params.url
+      redirect request_params.url, response_code
     end
 
-    post '/delay/?:delay?/url/*' do |*args|
-      set_request_params
-      log_request
-
-      sleep request_params.delay_secs
-      redirect request_params.url, 307
-    end
+    get '/delay/?:delay?/url/*', &respond_to_request
+    post '/delay/?:delay?/url/*', &respond_to_request
 
     private
 
@@ -31,6 +26,10 @@ module Slowwly
 
     def log_request
       logger.info "Handle #{request.request_method} request: #{request_params}"
+    end
+
+    def response_code
+      request.request_method == "GET" ? 302 : 307
     end
   end
 end
