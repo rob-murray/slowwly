@@ -2,7 +2,7 @@ require_relative 'base_controller'
 require 'byebug'
 module Slowwly
   class DelayController < BaseController
-    get '/delay/:delay/*' do |*args|
+    get '/delay/?:delay?/url/*' do |*args|
       set_request_params
       log_request
 
@@ -10,7 +10,7 @@ module Slowwly
       redirect request_params.url
     end
 
-    post '/delay/:delay/*' do |*args|
+    post '/delay/?:delay?/url/*' do |*args|
       set_request_params
       log_request
 

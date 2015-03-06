@@ -5,7 +5,7 @@ describe Slowwly::DelayController do
     context 'with delay time' do
       context 'with url' do
         before(:each) do
-          get('/delay/1500/http://example.com')
+          get('/delay/1500/url/http://example.com')
         end
 
         it 'responds with redirect' do
@@ -19,7 +19,7 @@ describe Slowwly::DelayController do
 
       context 'without url' do
         before(:each) do
-          get('/delay/1500/')
+          get('/delay/1500/url/')
         end
 
         xit 'informs client of error with request' do
@@ -30,7 +30,7 @@ describe Slowwly::DelayController do
 
     context 'given a request with invalid delay' do
       before(:each) do
-        get('/delay/foo/http://example.com')
+        get('/delay/foo/url/http://example.com')
       end
 
       it 'responds with redirect' do
@@ -43,26 +43,26 @@ describe Slowwly::DelayController do
     end
 
     context 'given a request without delay time' do
-      context 'and url' do
+      context 'with url' do
         before(:each) do
-          get('/delay//http://example.com')
+          get('/delay/url/http://example.com')
         end
 
-        xit 'responds with redirect' do
+        it 'responds with redirect' do
           expect(last_response.status).to eq(302)
         end
 
-        xit 'responds with correct header value' do
+        it 'responds with correct header value' do
           expect(last_response.location).to eq('http://example.com')
         end
       end
 
       context 'without url' do
         before(:each) do
-          get('/delay/')
+          get('/delay/url/')
         end
 
-        it 'informs client of invalid path' do
+        xit 'informs client of invalid path' do
           expect(last_response).to be_not_found
         end
       end
@@ -73,7 +73,7 @@ describe Slowwly::DelayController do
     context 'with delay time' do
       context 'with url' do
         before(:each) do
-          post('/delay/1500/http://example.com')
+          post('/delay/1500/url/http://example.com')
         end
 
         it 'responds with redirect' do
@@ -86,7 +86,7 @@ describe Slowwly::DelayController do
 
         context 'with post data' do
           before(:each) do
-            post('/delay/1500/http://example.com', {key: 'value', other_key: 'something else'})
+            post('/delay/1500/url/http://example.com', {key: 'value', other_key: 'something else'})
           end
 
           it 'does not moan about bad request, invalid params, blah' do
@@ -97,7 +97,7 @@ describe Slowwly::DelayController do
 
       context 'without url' do
         before(:each) do
-          post('/delay/1500/')
+          post('/delay/1500/url/')
         end
 
         xit 'informs client of error with request' do
@@ -108,7 +108,7 @@ describe Slowwly::DelayController do
 
     context 'given a request with invalid delay' do
       before(:each) do
-        post('/delay/foo/http://example.com')
+        post('/delay/foo/url/http://example.com')
       end
 
       it 'responds with redirect' do
@@ -121,27 +121,27 @@ describe Slowwly::DelayController do
     end
 
     context 'given a request without delay time' do
-      context 'and url' do
+      context 'with url' do
         before(:each) do
-          post('/delay//http://example.com')
+          post('/delay/url/http://example.com')
         end
 
-        xit 'responds with redirect' do
+        it 'responds with redirect' do
           expect(last_response.status).to eq(307)
         end
 
-        xit 'responds with correct header value' do
+        it 'responds with correct header value' do
           expect(last_response.location).to eq('http://example.com')
         end
       end
 
       context 'without url' do
         before(:each) do
-          post('/delay/')
+          post('/delay/url/')
         end
 
-        it 'informs client of invalid path' do
-          expect(last_response).to be_not_found
+        xit 'informs client of invalid path' do
+          expect(last_response).to be_bad_request
         end
       end
     end
