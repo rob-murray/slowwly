@@ -22,5 +22,9 @@ module Slowwly
       escaped_url = URI.unescape(value)
       super escaped_url.sub(/:\//, '://')
     end
+
+    def to_s
+      "<#{self.class.name}: delay: #{delay}, url: #{url}>"
+    end
   end
 end
