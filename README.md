@@ -12,7 +12,7 @@ This can be used to simulate timeouts so that you can see how your application r
 
 There are other services doing this but **Slowwly** will respond to `POST` requests as well as `GET`.
 
-Example URL with request delayed by 2 seconds - `http://127.0.0.1:9292/delay/2000/http://google.co.uk`
+Example URL with request delayed by 2 seconds - `http://127.0.0.1:9292/delay/2000/url/http://google.co.uk`
 
 #### Mantra
 
@@ -42,7 +42,7 @@ Feel free to run it anywhere you need.
 Build a URL with the following params:
 
 ```bash
-http://{host}/delay/{delay_time}/{url}
+http://{host}/delay/{delay_time}/url/{url}
 ```
 
 <dl>
@@ -69,7 +69,7 @@ http://{host}/delay/{delay_time}/{url}
 
 ```bash
 # a simple get request with 1 second delay
-$ curl -i http://127.0.0.1:9292/delay/1000/http://google.co.uk
+$ curl -i http://127.0.0.1:9292/delay/1000/url/http://google.co.uk
 HTTP/1.1 302 Found
 Content-Type: text/html;charset=utf-8
 Location: http://google.co.uk
@@ -77,7 +77,7 @@ Content-Length: 0
 # etc
 
 # a post request with some data and a 3 second delay
-$ curl -i --data "param1=value1" http://localhost:9292/delay/3000/http://myapi.com/endpoint
+$ curl -i --data "param1=value1" http://localhost:9292/delay/3000/url/http://myapi.com/endpoint
 HTTP/1.1 307 Temporary Redirect
 Content-Type: text/html;charset=utf-8
 Location: http://myapi.com/endpoint
