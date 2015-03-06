@@ -1,5 +1,5 @@
 require_relative 'base_controller'
-require 'byebug'
+
 module Slowwly
   class DelayController < BaseController
     respond_to_request = lambda do
