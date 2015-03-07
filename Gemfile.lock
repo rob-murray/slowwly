@@ -64,6 +64,8 @@ GEM
     pry-byebug (3.0.1)
       byebug (~> 3.4)
       pry (~> 0.10)
+    puma (2.11.1)
+      rack (>= 1.1, < 2.0)
     rack (1.6.0)
     rack-protection (1.5.3)
       rack
@@ -114,6 +116,7 @@ DEPENDENCIES
   coveralls
   pry
   pry-byebug
+  puma
   rack-test
   rake (~> 10.1)
   rspec
