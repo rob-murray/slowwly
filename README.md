@@ -4,6 +4,7 @@
 
 [![Build Status](https://travis-ci.org/rob-murray/slowwly.svg)](https://travis-ci.org/rob-murray/slowwly)
 
+
 ### Description
 
 A test service to mock a slow api response - simply prepend your **Slowwly** URL with delay configuration to your usual API URL and make a request, the response will be delayed.
@@ -14,12 +15,18 @@ There are other services doing this but **Slowwly** will respond to `POST` reque
 
 Example URL with request delayed by 2 seconds - `http://127.0.0.1:9292/delay/2000/url/http://google.co.uk`
 
+#### Try it out
+
+**Slowwly** is deployed on [Heroku here](http://slowwly.herokuapp.com/) so go ahead and use it.
+
+Example URL with request delayed by 2.5 seconds - `http://slowwly.herokuapp.com/delay/2500/url/http://google.co.uk`
+
 #### Mantra
 
 This project aims to;
 
 * Provide delayed response for at least `GET` and `POST` requests
-* Not intefere too much with calling code. We don't want users to have to modify request params to use this, editing code just to test something is a pain - the request host or URL should be the minimum required change to use this.
+* Not intefere too much with calling code making the request. We don't want users to have to modify request params to use this, editing code just to test something is a pain - the request host or URL should be the minimum required change to use this.
 * Return redirect after delay; It is useful to actually see how you code works with the real response returned after a delay. Note: obviously requires clients to follow redirects ;)
 
 
@@ -33,7 +40,8 @@ $ cd slowwly
 $ rackup
 ```
 
-Feel free to run it anywhere you need.
+Feel free to run it anywhere you need or use the existing deployed service [here](http://slowwly.herokuapp.com/).
+
 
 ### API
 
@@ -85,9 +93,11 @@ Content-Length: 0
 # etc
 ```
 
+
 ### Contributions
 
 Please use the GitHub pull-request mechanism to submit contributions.
+
 
 ### License
 
