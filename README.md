@@ -13,7 +13,7 @@ This can be used to simulate timeouts so that you can see how your application r
 
 There are other services doing this but **Slowwly** will respond to `POST` requests as well as `GET`.
 
-Example URL with request delayed by 2 seconds - `http://127.0.0.1:9292/delay/2000/url/http://google.co.uk`
+Example URL with request delayed by 2 seconds - `http://localhost:9292/delay/2000/url/http://google.co.uk`
 
 #### Try it out
 
