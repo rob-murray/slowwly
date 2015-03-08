@@ -77,7 +77,7 @@ http://{host}/delay/{delay_time}/url/{url}
 
 ```bash
 # a simple get request with 1 second delay
-$ curl -i http://127.0.0.1:9292/delay/1000/url/http://google.co.uk
+$ curl -i http://localhost:9292/delay/1000/url/http://google.co.uk
 HTTP/1.1 302 Found
 Content-Type: text/html;charset=utf-8
 Location: http://google.co.uk
