@@ -3,6 +3,7 @@
 #### A test service to mock a slow http response.
 
 [![Build Status](https://travis-ci.org/rob-murray/slowwly.svg)](https://travis-ci.org/rob-murray/slowwly)
+[![Dependency Status](https://gemnasium.com/rob-murray/slowwly.svg)](https://gemnasium.com/rob-murray/slowwly)
 
 
 ### Description
