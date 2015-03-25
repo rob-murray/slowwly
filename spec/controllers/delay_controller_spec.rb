@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Slowwly::DelayController do
+RSpec.describe Slowwly::DelayController do
   context 'with a GET request' do
     context 'with delay time' do
       context 'with url' do
