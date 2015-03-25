@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Slowwly::RootController do
+RSpec.describe Slowwly::RootController do
   context 'given a request to the server root' do
     before(:each) do
       get('/')
