@@ -24,7 +24,7 @@ module Slowwly
     end
 
     def to_s
-      "<#{self.class.name}: delay: #{delay}, url: #{url}>"
+      "<#{self.class.name}: delay=#{delay}, url=#{url}>"
     end
   end
 end
