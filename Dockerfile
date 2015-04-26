@@ -27,10 +27,12 @@ RUN apt-get install -yqq autoconf \
                          bison
 
 RUN \
-  apt-get install -y nginx && \
-  rm -rf /var/lib/apt/lists/* && \
-  echo "\ndaemon off;" >> /etc/nginx/nginx.conf && \
-  chown -R www-data:www-data /var/lib/nginx
+  apt-get install -y nginx
+
+RUN rm -v /etc/nginx/nginx.conf
+COPY nginx.conf /etc/nginx/nginx.conf
+RUN echo "daemon off;" >> /etc/nginx/nginx.conf
+COPY nginx-sites.conf /etc/nginx/sites-enabled/default
 
 RUN git clone https://github.com/sstephenson/ruby-build.git /tmp/ruby-build && \
     cd /tmp/ruby-build && \
@@ -52,8 +54,12 @@ RUN mkdir $APP_HOME
 
 WORKDIR $APP_HOME
 ADD . $APP_HOME
+
+ADD Gemfile Gemfile
+ADD Gemfile.lock Gemfile.lock
 RUN bundle install --without development:test --path vendor/bundle --binstubs vendor/bundle/bin -j4 --deployment
 RUN gem install foreman
+
 CMD bundle exec foreman start
 
-EXPOSE $PORT
+EXPOSE 8080
