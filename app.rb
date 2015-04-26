@@ -16,6 +16,11 @@ module Slowwly
       set :show_exceptions, true
     end
 
+    configure do
+      set :root, File.dirname(__FILE__)
+      set :public_folder, Proc.new { File.join(root, "public") }
+    end
+
     use Slowwly::RootController
     use Slowwly::DelayController
   end

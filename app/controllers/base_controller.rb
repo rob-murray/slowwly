@@ -6,8 +6,6 @@ module Slowwly
 
     configure do
       set :views, 'app/views'
-      set :public_folder, 'app/public'
-
       enable :logging
     end
 
