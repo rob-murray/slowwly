@@ -20,7 +20,7 @@ Example URL with request delayed by 2 seconds - `http://localhost:9292/delay/200
 
 **Slowwly** is deployed on [here](http://slowwly.robertomurray.co.uk/) so go ahead and use it or run locally.
 
-Example URL with request delayed by 2.5 seconds - `http://slowwly.herokuapp.com/delay/2500/url/http://google.co.uk`
+Example URL with request delayed by 2.5 seconds - `http://slowwly.robertomurray.co.uk/delay/2500/url/http://google.co.uk`
 
 #### Mantra
 
@@ -41,7 +41,7 @@ $ cd slowwly
 $ rackup
 ```
 
-Feel free to run it anywhere you need or use the existing deployed service [here](http://slowwly.herokuapp.com/).
+Feel free to run it anywhere you need or use the existing deployed service [here](http://slowwly.robertomurray.co.uk/).
 
 
 ### API
