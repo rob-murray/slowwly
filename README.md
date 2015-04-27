@@ -18,7 +18,7 @@ Example URL with request delayed by 2 seconds - `http://localhost:9292/delay/200
 
 #### Try it out
 
-**Slowwly** is deployed on @[http://slowwly.robertomurray.co.uk/](http://slowwly.robertomurray.co.uk/) so go ahead and use it or run locally.
+**Slowwly** is deployed @[http://slowwly.robertomurray.co.uk/](http://slowwly.robertomurray.co.uk/) so go ahead and use it or run locally.
 
 Example URL with request delayed by 2.5 seconds - `http://slowwly.robertomurray.co.uk/delay/2500/url/http://google.co.uk`
 
