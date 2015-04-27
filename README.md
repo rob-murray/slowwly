@@ -18,7 +18,7 @@ Example URL with request delayed by 2 seconds - `http://localhost:9292/delay/200
 
 #### Try it out
 
-**Slowwly** is deployed on [Heroku here](http://slowwly.herokuapp.com/) so go ahead and use it.
+**Slowwly** is deployed on [here](http://slowwly.robertomurray.co.uk/) so go ahead and use it or run locally.
 
 Example URL with request delayed by 2.5 seconds - `http://slowwly.herokuapp.com/delay/2500/url/http://google.co.uk`
 
