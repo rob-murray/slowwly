@@ -2,53 +2,62 @@
   Slowwly &middot; A test service to mock a slow api response; responds to get and post methods
 <% end %>
 
-<div class="jumbotron">
-  <div class="container">
-    <p>Slowwly</p>
-    <p>A test service to mock a slow http response</p>
-  </div>
-</div>
+<div class="container">
+  <div class="section">
 
-<div class="container" id="root">
+    <div class="row">
+      <div class="col s12 m4">
+        <div class="icon-block">
+          <h2 class="center light-blue-text"><i class="mdi-image-flash-on"></i></h2>
+          <h5>Why</h5>
 
-  <h3>Why / How</h3>
+          <p class="light">Make a request to Slowwly to simulate a slow response, configurable delay in millisecs.</p>
+          <p class="light">Test how your application responds to a slow request from external service or api.</p>
+          <p class="light">Example of one second delay to google.co.uk via browser: <a href="<%= base_url %>/delay/1000/url/http://google.co.uk"><%= base_url %>/delay/1000/url/http://google.co.uk</a></p>
+        </div>
+      </div>
 
-  <div class="row">
-    <div class="col-md-4">
-      <h2>Why</h2>
-      <p>Make a request to Slowwly to simulate a slow response, configurable delay in millisecs.</p>
-      <p>Test how your application responds to a slow request from external service or api.</p>
-      <p>Example of one second delay to google.co.uk via browser: <a href="<%= base_url %>/delay/1000/url/http://google.co.uk"><%= base_url %>/delay/1000/url/http://google.co.uk</a></p>
+      <div class="col s12 m4">
+        <div class="icon-block">
+          <h2 class="center light-blue-text"><i class="mdi-social-group"></i></h2>
+          <h5>How</h5>
+
+          <p class="light">Supported HTTP methods:</p>
+          <dl>
+            <dt>GET</dt>
+            <dd>Responds with <code>HTTP 302</code></dd>
+            <dt>POST</dt>
+            <dd>Responds with <code>HTTP 307</code></dd>
+          </dl>
+        </div>
+      </div>
+
+      <div class="col s12 m4">
+        <div class="icon-block">
+          <h2 class="center light-blue-text"><i class="mdi-action-settings"></i></h2>
+          <h5>Parameters</h5>
+
+          <p class="light">Build a URL with the following params:</p>
+          <pre>
+    http://{host}/delay/{delay_time}/url/{url}
+          </pre>
+          <dl>
+            <dt><code>host</code></dt>
+            <dd>The host where this app is running</dd>
+            <dt><code>delay_time</code></dt>
+            <dd>Time to delay response in milliseconds</dd>
+            <dt><code>url</code></dt>
+            <dd>The URL to redirect to via response</dd>
+          </dl>
+        </div>
+      </div>
     </div>
 
-    <div class="col-md-4">
-      <h2>How</h2>
-      <p>Supported HTTP methods:</p>
-      <dl>
-        <dt>GET</dt>
-        <dd>Responds with HTTP<code>302</code></dd>
-        <dt>POST</dt>
-        <dd>Responds with HTTP<code>307</code></dd>
-      </dl>
     </div>
+    <br><br>
 
-    <div class="col-md-4">
-      <h2>Parameters</h2>
-      <p>Build a URL with the following params:</p>
+    <div class="section">
       <pre>
-http://{host}/delay/{delay_time}/url/{url}
-      </pre>
-      <dl>
-        <dt><code>host</code></dt>
-        <dd>The host where this app is running</dd>
-        <dt><code>delay_time</code></dt>
-        <dd>Time to delay response in milliseconds</dd>
-        <dt><code>url</code></dt>
-        <dd>The URL to redirect to via response</dd>
-      </dl>
-    </div>
-
-  <pre>
 # a simple get request with 1 second delay
 $ curl -i <%= base_url %>/delay/1000/url/http://google.co.uk
 HTTP/1.1 302 Found
@@ -83,8 +92,9 @@ Location: https://www.google.co.uk/?gws_rd=ssl
 Cache-Control: private
 Content-Type: text/html; charset=UTF-8
 # etc
-  </pre>
+    </pre>
+  </div>
 
-  <%= render_partial :footer %>
+  </div>
+</div>
 
-</div> <!-- /container -->

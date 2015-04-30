@@ -1,50 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Tell me why I should use this.">
-    <meta name="author" content="rob-murray">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+
     <title><%= yield_content :title %></title>
+    <meta name="author" content="rob-murray">
+    <meta name="description" content="Tell me why I should use this.">
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-    <style>
-      body {
-        padding-top: 50px;
-        padding-bottom: 20px;
-      }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/css/materialize.min.css">
+    <link type="text/css" rel="stylesheet" href="/assets/styles.css" />
 
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <meta property="og:title" content="Slowwly" />
+    <meta property="og:description"
+      content="About slowwly."
+    />
+    <meta property="og:type" content="article" />
   </head>
-
   <body>
 
-    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="section no-pad-bot" id="index-banner">
       <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="/">Slowwly</a>
+        <br><br>
+        <h1 class="header center orange-text">Slowwly</h1>
+        <div class="row center">
+          <h5 class="header col s12 light">A test service to mock a slow http response</h5>
         </div>
-        <div class="navbar-collapse collapse">
-
+        <div class="row center">
+          <a href="#" id="download-button" class="btn-large waves-effect waves-light orange">Get Started</a>
         </div>
+        <br><br>
       </div>
     </div>
 
     <%= yield %>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <footer class="page-footer orange">
+      <div class="footer-copyright">
+        <div class="container">
+          Rate / Hate / Contribute: <a class="orange-text text-lighten-3" href="https://github.com/rob-murray/slowwly">rob-murray/slowwly</a>.
+        </div>
+      </div>
+    </footer>
 
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/js/materialize.min.js"></script>
+    <script src="http://fb.me/react-0.13.1.min.js"></script>
+    <script src="http://fb.me/JSXTransformer-0.13.1.js"></script>
+    <script type="text/jsx" src="./assets/app.js"></script>
   </body>
 </html>
