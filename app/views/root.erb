@@ -57,25 +57,39 @@
     <br><br>
 
     <div class="section">
-      <pre>
-# a simple get request with 1 second delay
-$ curl -i <%= base_url %>/delay/1000/url/http://google.co.uk
+      <div class="terminal-window">
+        <header>
+          <div class="button green"></div>
+          <div class="button yellow"></div>
+          <div class="button red"></div>
+        </header>
+        <section class="terminal">
+# a simple get request with 1 second delay<br>
+          $&nbsp;<span class="prompt"></span>
+          <span class="typed-cursor">curl -i <%= base_url %>/delay/1000/url/http://google.co.uk</span>
+          <pre class="history">
 HTTP/1.1 302 Found
 Content-Type: text/html;charset=utf-8
 Location: http://google.co.uk
 Content-Length: 0
 # etc
+          </pre>
 
-# a post request with some data and a 3 second delay
-$ curl -i --data "param1=value1" <%= base_url %>/delay/3000/url/http://myapi.com/endpoint
+# a post request with some data and a 3 second delay<br>
+          $&nbsp;<span class="prompt"></span>
+          <span class="typed-cursor">curl -i --data "param1=value1" <%= base_url %>/delay/3000/url/http://myapi.com/endpoint</span>
+          <pre class="history">
 HTTP/1.1 307 Temporary Redirect
 Content-Type: text/html;charset=utf-8
 Location: http://myapi.com/endpoint
 Content-Length: 0
 # etc
+          </pre>
 
-# an example get request with follow redirect enabled
-$ curl -i -L <%= base_url %>/delay/1000/url/http://google.co.uk
+# an example get request with follow redirect enabled<br>
+          $&nbsp;<span class="prompt"></span>
+          <span class="typed-cursor">curl -i -L <%= base_url %>/delay/1000/url/http://google.co.uk</span>
+          <pre class="history">
 HTTP/1.1 302 Found
 Content-Type: text/html;charset=utf-8
 Location: http://google.co.uk
@@ -92,7 +106,9 @@ Location: https://www.google.co.uk/?gws_rd=ssl
 Cache-Control: private
 Content-Type: text/html; charset=UTF-8
 # etc
-    </pre>
+        </pre>
+      </section>
+    </div>
   </div>
 
   </div>
