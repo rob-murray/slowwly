@@ -13,8 +13,8 @@
           <h5>Why</h5>
 
           <p class="light">Make a request to Slowwly to simulate a slow response, configurable delay in millisecs.</p>
-          <p class="light">Test how your application responds to a slow request from external service or api.</p>
-          <p class="light">Example of one second delay to google.co.uk via browser: <a href="<%= base_url %>/delay/1000/url/http://google.co.uk"><%= base_url %>/delay/1000/url/http://google.co.uk</a></p>
+          <p class="light">Test how your application responds to a slow response from external service or api.</p>
+          <p class="light">Example of one second delay to google.co.uk: <a href="<%= base_url %>/delay/1000/url/http://google.co.uk"><%= base_url %>/delay/1000/url/http://google.co.uk</a></p>
         </div>
       </div>
 
@@ -39,9 +39,9 @@
           <h5>Parameters</h5>
 
           <p class="light">Build a URL with the following params:</p>
-          <pre>
-    http://{host}/delay/{delay_time}/url/{url}
-          </pre>
+          <code>
+            http://{host}/delay/{delay_time}/url/{url}
+          </code>
           <dl>
             <dt><code>host</code></dt>
             <dd>The host where this app is running</dd>
