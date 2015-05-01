@@ -6,7 +6,7 @@
 
     <title><%= yield_content :title %></title>
     <meta name="author" content="rob-murray">
-    <meta name="description" content="Tell me why I should use this.">
+    <meta name="description" content="Make a request to Slowwly to simulate a slow response, configurable delay in millisecs. Test how your application responds to a slow request from external service or api.">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/css/materialize.min.css">
     <link type="text/css" rel="stylesheet" href="/assets/styles.css" />
@@ -22,12 +22,12 @@
     <div class="section no-pad-bot" id="index-banner">
       <div class="container">
         <br><br>
-        <h1 class="header center orange-text">Slowwly</h1>
+        <h1 class="header center indigo-text darken-2">Slowwly</h1>
         <div class="row center">
-          <h5 class="header col s12 light">A test service to mock a slow http response</h5>
+          <h5 class="header col s12 grey-text">A test service to mock a slow http response</h5>
         </div>
         <div class="row center">
-          <a href="#" id="download-button" class="btn-large waves-effect waves-light orange">Get Started</a>
+          <a href="#go" id="download-button" class="btn-large waves-effect waves-light amber">Get Started</a>
         </div>
         <br><br>
       </div>
@@ -35,18 +35,16 @@
 
     <%= yield %>
 
-    <footer class="page-footer orange">
+    <footer class="page-footer indigo lighten-3">
       <div class="footer-copyright">
         <div class="container">
-          Rate / Hate / Contribute: <a class="orange-text text-lighten-3" href="https://github.com/rob-murray/slowwly">rob-murray/slowwly</a>.
+          Rate / Hate / Contribute: <a class="grey-text text-darken-4" href="https://github.com/rob-murray/slowwly">rob-murray/slowwly</a>.
         </div>
       </div>
     </footer>
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/js/materialize.min.js"></script>
-    <script src="http://fb.me/react-0.13.1.min.js"></script>
-    <script src="http://fb.me/JSXTransformer-0.13.1.js"></script>
     <script type="text/jsx" src="./assets/app.js"></script>
   </body>
 </html>

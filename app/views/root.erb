@@ -6,9 +6,10 @@
   <div class="section">
 
     <div class="row">
+      <a id="go"></a>
       <div class="col s12 m4">
         <div class="icon-block">
-          <h2 class="center light-blue-text"><i class="mdi-image-flash-on"></i></h2>
+          <h2 class="center indigo-text text-lighten-3"><i class="mdi-editor-format-list-bulleted"></i></h2>
           <h5>Why</h5>
 
           <p class="light">Make a request to Slowwly to simulate a slow response, configurable delay in millisecs.</p>
@@ -19,7 +20,7 @@
 
       <div class="col s12 m4">
         <div class="icon-block">
-          <h2 class="center light-blue-text"><i class="mdi-social-group"></i></h2>
+          <h2 class="center indigo-text text-lighten-3"><i class="mdi-communication-business"></i></h2>
           <h5>How</h5>
 
           <p class="light">Supported HTTP methods:</p>
@@ -34,7 +35,7 @@
 
       <div class="col s12 m4">
         <div class="icon-block">
-          <h2 class="center light-blue-text"><i class="mdi-action-settings"></i></h2>
+          <h2 class="center indigo-text text-lighten-3"><i class="mdi-action-settings"></i></h2>
           <h5>Parameters</h5>
 
           <p class="light">Build a URL with the following params:</p>
@@ -64,7 +65,7 @@
           <div class="button red"></div>
         </header>
         <section class="terminal">
-# a simple get request with 1 second delay<br>
+          # a simple get request with 1 second delay<br>
           $&nbsp;<span class="prompt"></span>
           <span class="typed-cursor">curl -i <%= base_url %>/delay/1000/url/http://google.co.uk</span>
           <pre class="history">
@@ -75,7 +76,7 @@ Content-Length: 0
 # etc
           </pre>
 
-# a post request with some data and a 3 second delay<br>
+          # a post request with some data and a 3 second delay<br>
           $&nbsp;<span class="prompt"></span>
           <span class="typed-cursor">curl -i --data "param1=value1" <%= base_url %>/delay/3000/url/http://myapi.com/endpoint</span>
           <pre class="history">
@@ -86,7 +87,7 @@ Content-Length: 0
 # etc
           </pre>
 
-# an example get request with follow redirect enabled<br>
+          # an example get request with follow redirect enabled<br>
           $&nbsp;<span class="prompt"></span>
           <span class="typed-cursor">curl -i -L <%= base_url %>/delay/1000/url/http://google.co.uk</span>
           <pre class="history">
