@@ -1,11 +1,11 @@
-require 'sinatra'
+require "sinatra"
 
 module Slowwly
   class BaseController < Sinatra::Base
     helpers Sinatra::ContentFor
 
     configure do
-      set :views, 'app/views'
+      set :views, "app/views"
       enable :logging
     end
 
@@ -20,6 +20,10 @@ module Slowwly
 
       def base_url
         @base_url ||= "#{request.env['rack.url_scheme']}://#{request.env['HTTP_HOST']}"
+      end
+
+      def production?
+        ENV["RACK_ENV"] == "production"
       end
     end
 
