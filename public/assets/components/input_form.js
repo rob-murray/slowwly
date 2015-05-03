@@ -9,7 +9,7 @@ var InputForm = React.createClass({
 
   handleDelayChange: function(e) {
     e.preventDefault();
-    var delay = e.currentTarget.valueAsNumber
+    var delay = e.currentTarget.valueAsNumber;
     this.setState({selectedDelay: delay});
     this.props.onInputChange({url: this.state.url, delayTime: delay});
 
@@ -28,10 +28,10 @@ var InputForm = React.createClass({
   },
 
   delayInSeconds: function() {
-    return this.state.selectedDelay / 1000
+    return this.state.selectedDelay / 1000;
   },
 
-  render() {
+  render: function() {
     return (
       <div className="row">
         <div className="input-field col s6">
@@ -44,7 +44,7 @@ var InputForm = React.createClass({
           <h5>{this.delayInSeconds()} secs</h5>
         </div>
       </div>
-    )
+    );
   }
 });
 

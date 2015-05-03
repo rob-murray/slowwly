@@ -22,10 +22,10 @@ var App = React.createClass({
   },
 
   slowwlyUrl: function() {
-    return this.props.host+"/delay/"+this.state.delayTime+"/url/"+this.state.url
+    return this.props.host + "/delay/" + this.state.delayTime + "/url/" + this.state.url;
   },
 
-  render() {
+  render: function() {
     return (
       <div>
         <InputForm onInputChange={this.handleInputChange} defaultDelay={this.state.delayTime} />
