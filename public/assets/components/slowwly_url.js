@@ -5,6 +5,12 @@ var SlowwlyUrl = React.createClass({
     url : React.PropTypes.string.isRequired
   },
 
+  getInitialState: function() {
+    return {
+      selected: false
+    }
+  },
+
   getDefaultProps: function() {
     return {
       url: "{Select url and delay time}"
@@ -14,9 +20,17 @@ var SlowwlyUrl = React.createClass({
   handleCopyClick: function(e) {
     e.preventDefault();
     this.refs.clipboard.selectText();
+    this.setState({selected: true});
+    setTimeout(function () {
+      this.setState({selected: false});
+    }.bind(this), 5000);
+
+    return;
   },
 
   render: function() {
+    var selectedText = this.state.selected ? "Hit Ctrl + C" : null;
+
     return (
       <div className="row">
         <div className="col s12">
@@ -25,10 +39,11 @@ var SlowwlyUrl = React.createClass({
               <h4 ref="slowwly_url" className="card-title center">
                 {this.props.url}
               </h4>
-              <Clipboard ref="clipboard" value={this.props.url} />
+
             </div>
             <div className="card-action">
-              <a href="#" onClick={this.handleCopyClick}>Copy</a>
+              <Clipboard ref="clipboard" value={this.props.url} />
+              <a href="" onClick={this.handleCopyClick}>Copy</a> {selectedText}
             </div>
           </div>
         </div>
