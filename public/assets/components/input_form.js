@@ -1,27 +1,47 @@
 
 var InputForm = React.createClass({
   getInitialState: function() {
-    return {selectedDelay: 3000};
+    return {
+      selectedDelay: this.props.defaultDelay,
+      url: "https://www.google.com"
+    };
   },
 
-  handleDelayChange: function(e){
+  handleDelayChange: function(e) {
     e.preventDefault();
-    this.setState({selectedDelay: e.currentTarget.valueAsNumber})
+    var delay = e.currentTarget.valueAsNumber
+    this.setState({selectedDelay: delay});
+    this.props.onInputChange({url: this.state.url, delayTime: delay});
+
+    return;
+  },
+
+  handleUrlChange: function(e) {
+    e.preventDefault();
+    var url = e.currentTarget.value;
+    if (!url) {
+      return;
+    }
+    this.props.onInputChange({url: url, delayTime: this.state.selectedDelay});
+
+    return;
+  },
+
+  delayInSeconds: function() {
+    return this.state.selectedDelay / 1000
   },
 
   render() {
     return (
       <div className="row">
         <div className="input-field col s6">
-          <input placeholder="http://google.com" id="redirect_url" type="text" className="validate" />
+          <input ref="redirect_url" placeholder="http://google.com" id="redirect_url" type="text" className="validate" onChange={this.handleUrlChange} />
         </div>
         <div className="input-field col s4">
-          <p className="range-field">
-            <input type="range" id="delay_time" value={this.state.selectedDelay} min="0" max="10000" step="100" onInput={this.handleDelayChange} />
-          </p>
+            <input type="range" id="delay_time" min="0" max="10000" step="100" onInput={this.handleDelayChange} />
         </div>
         <div className="input-field col s2 center">
-          <span>{this.state.selectedDelay / 1000}</span> secs
+          <h5>{this.delayInSeconds()} secs</h5>
         </div>
       </div>
     )
