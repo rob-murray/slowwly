@@ -1,5 +1,14 @@
 
 var InputForm = React.createClass({
+  getInitialState: function() {
+    return {selectedDelay: 3000};
+  },
+
+  handleDelayChange: function(e){
+    e.preventDefault();
+    this.setState({selectedDelay: e.currentTarget.valueAsNumber})
+  },
+
   render() {
     return (
       <div className="row">
@@ -8,11 +17,11 @@ var InputForm = React.createClass({
         </div>
         <div className="input-field col s4">
           <p className="range-field">
-            <input type="range" id="delay_time" min="1" max="10000" />
+            <input type="range" id="delay_time" value={this.state.selectedDelay} min="0" max="10000" step="100" onInput={this.handleDelayChange} />
           </p>
         </div>
         <div className="input-field col s2 center">
-          <span>1</span> Second
+          <span>{this.state.selectedDelay / 1000}</span> secs
         </div>
       </div>
     )
