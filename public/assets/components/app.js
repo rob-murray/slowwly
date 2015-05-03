@@ -15,7 +15,7 @@ var App = React.createClass({
   getInitialState: function() {
     return {
       delayTime: 3000,
-      url: "http://google.com"
+      url: "http://www.google.co.uk"
     };
   },
 
@@ -32,7 +32,7 @@ var App = React.createClass({
   render: function() {
     return (
       <div>
-        <InputForm onInputChange={this.handleInputChange} defaultDelay={this.state.delayTime} />
+        <InputForm onInputChange={this.handleInputChange} defaultDelay={this.state.delayTime} defaultUrl={this.state.url} />
         <SlowwlyUrl url={this.slowwlyUrl()} />
       </div>
     );

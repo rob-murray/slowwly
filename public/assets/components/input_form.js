@@ -7,7 +7,7 @@ var InputForm = React.createClass({
   getInitialState: function() {
     return {
       selectedDelay: this.props.defaultDelay,
-      url: "https://www.google.com"
+      url: this.props.defaultUrl
     };
   },
 
@@ -40,7 +40,7 @@ var InputForm = React.createClass({
     return (
       <div className="row">
         <div className="input-field col s6">
-          <input ref="redirect_url" placeholder="http://google.com" id="redirect_url" type="text" className="validate" onChange={this.handleUrlChange} />
+          <input ref="redirect_url" placeholder={this.props.defaultUrl} id="redirect_url" type="text" className="validate" onChange={this.handleUrlChange} />
         </div>
         <div className="input-field col s4">
             <input type="range" id="delay_time" min="0" max="10000" step="100" onInput={this.handleDelayChange} />
