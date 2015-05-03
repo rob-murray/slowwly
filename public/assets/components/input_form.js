@@ -26,6 +26,7 @@ var InputForm = React.createClass({
     if (!url) {
       return;
     }
+    this.setState({url: url});
     this.props.onInputChange({url: url, delayTime: this.state.selectedDelay});
 
     return;
