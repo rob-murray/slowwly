@@ -1,0 +1,29 @@
+{
+  "name": "slowwly",
+  "version": "0.0.1",
+  "description": "Slowwly web app",
+  "author": "Rob Murray <robmurray17@gmail.com>",
+  "license": "MIT",
+  "main": "public/assets/bundle.js",
+  "private": true,
+  "scripts": {
+    "watch-js": "watchify -e public/assets/main.js -o public/assets/bundle.js",
+    "build-dev": "browserify -e public/assets/main.js -o public/assets/bundle.js",
+    "build": "browserify -e public/assets/main.js | uglifyjs -cm > public/assets/bundle.js"
+  },
+  "browserify": {
+    "transform": [
+      "reactify",
+      "envify"
+    ]
+  },
+  "devDependencies": {
+    "browserify": "^10.0.0",
+    "envify": "^3.4.0",
+    "react": "^0.13.2",
+    "reactify": "^1.1.0",
+    "uglify-js": "^2.4.20",
+    "underscore": "^1.8.3",
+    "watchify": "^3.2.1"
+  }
+}
