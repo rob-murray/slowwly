@@ -2,6 +2,10 @@ var SlowwlyUrl = require('./slowwly_url');
 var InputForm = require('./input_form');
 
 var App = React.createClass({
+  propTypes: {
+    host : React.PropTypes.string.isRequired
+  },
+
   getDefaultProps: function() {
     return {
       host : "http://slowwly.robertomurray.co.uk"

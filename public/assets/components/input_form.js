@@ -1,5 +1,9 @@
 
 var InputForm = React.createClass({
+  propTypes: {
+    onInputChange: React.PropTypes.func.isRequired
+  },
+
   getInitialState: function() {
     return {
       selectedDelay: this.props.defaultDelay,

@@ -1,6 +1,10 @@
 var Clipboard = require('./clipboard');
 
 var SlowwlyUrl = React.createClass({
+  propTypes: {
+    url : React.PropTypes.string.isRequired
+  },
+
   getDefaultProps: function() {
     return {
       url: "{Select url and delay time}"
