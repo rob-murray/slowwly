@@ -1,55 +1,51 @@
 
 var InputForm = React.createClass({
   propTypes: {
-    onInputChange: React.PropTypes.func.isRequired
+    onInputChange: React.PropTypes.func.isRequired,
+    delayTime: React.PropTypes.number.isRequired,
+    url: React.PropTypes.string.isRequired
   },
 
-  getInitialState: function() {
-    return {
-      selectedDelay: this.props.defaultDelay,
-      url: this.props.defaultUrl
-    };
+  render: function() {
+    var delayTime = this._delayInSeconds(),
+      url = this.props.url;
+
+    return (
+      <div className="row">
+        <div className="input-field col s6">
+          <input ref="redirect_url" value={url} id="redirect_url" type="text" className="validate" onChange={this._handleUrlChange} />
+        </div>
+        <div className="input-field col s4">
+            <input type="range" id="delay_time" min="0" max="10000" step="100" onInput={this._handleDelayChange} />
+        </div>
+        <div className="input-field col s2 center">
+          <h5>{delayTime} secs</h5>
+        </div>
+      </div>
+    );
   },
 
-  handleDelayChange: function(e) {
+  _handleDelayChange: function(e) {
     e.preventDefault();
     var delay = e.currentTarget.valueAsNumber;
-    this.setState({selectedDelay: delay});
-    this.props.onInputChange({url: this.state.url, delayTime: delay});
+    this.props.onInputChange({url: this.props.url, delayTime: delay});
 
     return;
   },
 
-  handleUrlChange: function(e) {
+  _handleUrlChange: function(e) {
     e.preventDefault();
     var url = e.currentTarget.value;
     if (!url) {
       return;
     }
-    this.setState({url: url});
-    this.props.onInputChange({url: url, delayTime: this.state.selectedDelay});
+    this.props.onInputChange({url: url, delayTime: this.props.delayTime});
 
     return;
   },
 
-  delayInSeconds: function() {
-    return this.state.selectedDelay / 1000;
-  },
-
-  render: function() {
-    return (
-      <div className="row">
-        <div className="input-field col s6">
-          <input ref="redirect_url" placeholder={this.props.defaultUrl} id="redirect_url" type="text" className="validate" onChange={this.handleUrlChange} />
-        </div>
-        <div className="input-field col s4">
-            <input type="range" id="delay_time" min="0" max="10000" step="100" onInput={this.handleDelayChange} />
-        </div>
-        <div className="input-field col s2 center">
-          <h5>{this.delayInSeconds()} secs</h5>
-        </div>
-      </div>
-    );
+  _delayInSeconds: function() {
+    return this.props.delayTime / 1000;
   }
 });
 

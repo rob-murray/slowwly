@@ -17,17 +17,6 @@ var DisplayBox = React.createClass({
     };
   },
 
-  handleCopyClick: function(e) {
-    e.preventDefault();
-    this.refs.clipboard.selectText();
-    this.setState({selected: true});
-    setTimeout(function () {
-      this.setState({selected: false});
-    }.bind(this), 5000);
-
-    return;
-  },
-
   render: function() {
     var selectedText = this.state.selected ? "Hit Ctrl + C" : null;
 
@@ -43,12 +32,23 @@ var DisplayBox = React.createClass({
             </div>
             <div className="card-action">
               <Clipboard ref="clipboard" value={this.props.url} />
-              <a href="" onClick={this.handleCopyClick}>Copy</a> {selectedText}
+              <a href="" onClick={this._handleCopyClick}>Copy</a> {selectedText}
             </div>
           </div>
         </div>
       </div>
     );
+  },
+
+  _handleCopyClick: function(e) {
+    e.preventDefault();
+    this.refs.clipboard.selectText();
+    this.setState({selected: true});
+    setTimeout(function () {
+      this.setState({selected: false});
+    }.bind(this), 5000);
+
+    return;
   }
 });
 
