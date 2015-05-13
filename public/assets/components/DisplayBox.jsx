@@ -1,6 +1,6 @@
-var Clipboard = require('./clipboard');
+var Clipboard = require('./Clipboard.jsx');
 
-var SlowwlyUrl = React.createClass({
+var DisplayBox = React.createClass({
   propTypes: {
     url : React.PropTypes.string.isRequired
   },
@@ -52,4 +52,4 @@ var SlowwlyUrl = React.createClass({
   }
 });
 
-module.exports = SlowwlyUrl;
+module.exports = DisplayBox;

@@ -1,5 +1,5 @@
-var SlowwlyUrl = require('./slowwly_url');
-var InputForm = require('./input_form');
+var DisplayBox = require('./DisplayBox.jsx');
+var InputForm = require('./InputForm.jsx');
 
 var App = React.createClass({
   propTypes: {
@@ -33,7 +33,7 @@ var App = React.createClass({
     return (
       <div>
         <InputForm onInputChange={this.handleInputChange} defaultDelay={this.state.delayTime} defaultUrl={this.state.url} />
-        <SlowwlyUrl url={this.slowwlyUrl()} />
+        <DisplayBox url={this.slowwlyUrl()} />
       </div>
     );
   }
