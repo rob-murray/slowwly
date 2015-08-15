@@ -40,7 +40,7 @@ RUN git clone https://github.com/sstephenson/ruby-build.git /tmp/ruby-build && \
     cd / && \
     rm -rf /tmp/ruby-build
 
-ENV RUBY_VERSION 2.2.0
+ENV RUBY_VERSION 2.2.2
 RUN ruby-build -v $RUBY_VERSION /usr/local
 RUN /bin/bash -l -c "gem install bundler --no-ri --no-rdoc"
 
