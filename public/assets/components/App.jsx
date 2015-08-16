@@ -1,5 +1,5 @@
-var DisplayBox = require('./DisplayBox.jsx');
-var InputForm = require('./InputForm.jsx');
+var DisplayBox = require('./DisplayBox.jsx'),
+  InputForm = require('./InputForm.jsx');
 
 var App = React.createClass({
   propTypes: {
