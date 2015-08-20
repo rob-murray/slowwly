@@ -94,6 +94,16 @@ Content-Length: 0
 # etc
 ```
 
+### Development / Deployment
+
+This application is available as a ~~latest cool thing~~ Docker image at [robmurray/slowwly-web](https://hub.docker.com/r/robmurray/slowwly-web/). Run it yourself with:
+
+```bash
+docker pull robmurray/slowwly-web
+docker build -t <tag>
+docker run -d -p 8080:8080 --name <name> -t <tag>
+```
+
 
 ### Contributions
 
