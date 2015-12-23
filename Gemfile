@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-ruby "2.2.2"
+ruby "2.2.3"
 
 gem "rake", "~> 10.1"
 gem "tilt", "~> 1.3"
