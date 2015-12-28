@@ -78,10 +78,10 @@ http://{host}/delay/{delay_time}/url/{url}
 
 ```bash
 # a simple get request with 1 second delay
-$ curl -i http://localhost:9292/delay/1000/url/http://google.co.uk
+$ curl -i http://localhost:9292/delay/1000/url/https://www.google.co.uk
 HTTP/1.1 302 Found
 Content-Type: text/html;charset=utf-8
-Location: http://google.co.uk
+Location: https://www.google.co.uk
 Content-Length: 0
 # etc
 
@@ -96,7 +96,11 @@ Content-Length: 0
 
 ### Development / Deployment
 
-This application is available as a ~~latest cool thing~~ Docker image at [robmurray/slowwly-web](https://hub.docker.com/r/robmurray/slowwly-web/). Run it yourself with:
+This application is available as a ~~latest cool thing~~ Docker image at [robmurray/slowwly-web](https://hub.docker.com/r/robmurray/slowwly-web/).
+
+> Checkout the `docker` branch
+
+Run it yourself with:
 
 ```bash
 docker pull robmurray/slowwly-web

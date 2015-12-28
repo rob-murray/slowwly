@@ -75,11 +75,11 @@
         <section class="terminal">
           # a simple get request with 1 second delay<br>
           $&nbsp;<span class="prompt"></span>
-          <span class="typed-cursor">curl -i <%= base_url %>/delay/1000/url/http://google.co.uk</span>
+          <span class="typed-cursor">curl -i <%= base_url %>/delay/1000/url/https://www.google.co.uk</span>
           <pre class="history">
 HTTP/1.1 302 Found
 Content-Type: text/html;charset=utf-8
-Location: http://google.co.uk
+Location: https://www.google.co.uk
 Content-Length: 0
 # etc
           </pre>
@@ -97,21 +97,15 @@ Content-Length: 0
 
           # an example get request with follow redirect enabled<br>
           $&nbsp;<span class="prompt"></span>
-          <span class="typed-cursor">curl -i -L <%= base_url %>/delay/1000/url/http://google.co.uk</span>
+          <span class="typed-cursor">curl -i -L <%= base_url %>/delay/1000/url/https://www.google.co.uk/</span>
           <pre class="history">
 HTTP/1.1 302 Found
 Content-Type: text/html;charset=utf-8
-Location: http://google.co.uk
+Location: https://www.google.co.uk
 Content-Length: 0
 # etc
 
-HTTP/1.1 301 Moved Permanently
-Location: http://www.google.co.uk/
-Content-Type: text/html; charset=UTF-8
-# etc
-
-HTTP/1.1 302 Found
-Location: https://www.google.co.uk/?gws_rd=ssl
+HTTP/1.1 200 OK
 Cache-Control: private
 Content-Type: text/html; charset=UTF-8
 # etc
