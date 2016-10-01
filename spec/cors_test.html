@@ -1,0 +1,31 @@
+<html>
+  <body>
+    <h1>Slowwly CORS test</h1>
+    <div class="url"></div>
+    <div class="output">Loading...</div>
+  </body>
+
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript">
+    $( document ).ready(function() {
+      var jsonApi = "https://jsonplaceholder.typicode.com/posts";
+      var slowwlyUrl = "http://localhost:5000/delay/3000/url/" + jsonApi;
+
+      $( ".url" ).text("Using URL: " + slowwlyUrl);
+
+      $.getJSON( slowwlyUrl, function( data ) {
+        var items = [];
+        $.each( data, function( key, val ) {
+          items.push( "<li id='" + key + "'>" + JSON.stringify(val) + "</li>" );
+        });
+
+        $( ".output" ).replaceWith(
+          $( "<ul/>", {
+            "class": "my-new-list",
+            html: items.join( "" )
+          })
+        );
+      });
+    });
+  </script>
+</html>

@@ -1,23 +1,25 @@
-require 'rubygems'
-require 'coveralls'
-require 'codeclimate-test-reporter'
+# frozen_string_literal: true
+require "rubygems"
+require "coveralls"
+require "codeclimate-test-reporter"
+require "byebug"
 
 # force the environment to 'test'
-ENV['RACK_ENV'] = 'test'
+ENV["RACK_ENV"] = "test"
 
 CodeClimate::TestReporter.start
 Coveralls.wear!
 
-Dir.glob('./spec/support/{helpers}/*.rb').each { |file| require file }
+Dir.glob("./spec/support/{helpers}/*.rb").each { |file| require file }
 
-require_relative '../app'
-require_relative '../app/slowwly'
-Dir.glob('./app/{controllers,models}/*.rb').each { |file| require file }
+require_relative "../app"
+require_relative "../app/slowwly"
+Dir.glob("./app/{controllers,models}/*.rb").each { |file| require file }
 
-require 'sinatra'
-require 'rspec'
-require 'rack/test'
-require 'rspec-html-matchers'
+require "sinatra"
+require "rspec"
+require "rack/test"
+require "rspec-html-matchers"
 
 # test environment stuff
 Sinatra::Base.set :environment, :test
@@ -35,7 +37,7 @@ RSpec.configure do |config|
   # order dependency and want to debug it, you can fix the order by providing
   # the seed, which is printed after each run.
   #     --seed 1234
-  config.order = 'random'
+  config.order = "random"
 end
 
 def app
