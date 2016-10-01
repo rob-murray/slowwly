@@ -1,4 +1,5 @@
-require_relative 'base_controller'
+# frozen_string_literal: true
+require_relative "base_controller"
 
 module Slowwly
   class DelayController < BaseController
@@ -10,8 +11,8 @@ module Slowwly
       redirect request_params.url, response_code
     end
 
-    get '/delay/?:delay?/url/*', &respond_to_request
-    post '/delay/?:delay?/url/*', &respond_to_request
+    get "/delay/?:delay?/url/*", &respond_to_request
+    post "/delay/?:delay?/url/*", &respond_to_request
 
     private
 

@@ -1,9 +1,10 @@
-require 'sinatra'
-require 'sinatra/base'
-require 'sinatra/content_for'
-require 'virtus'
+# frozen_string_literal: true
+require "sinatra"
+require "sinatra/base"
+require "sinatra/content_for"
+require "virtus"
 
-Dir.glob('./app/{controllers,models}/*.rb').each { |file| require file }
+Dir.glob("./app/{controllers,models}/*.rb").each { |file| require file }
 
 module Slowwly
   class App < Sinatra::Application
@@ -18,7 +19,7 @@ module Slowwly
 
     configure do
       set :root, File.dirname(__FILE__)
-      set :public_folder, Proc.new { File.join(root, "public") }
+      set :public_folder, proc { File.join(root, "public") }
     end
 
     use Slowwly::RootController
