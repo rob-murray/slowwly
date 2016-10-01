@@ -2,6 +2,7 @@
 require "rubygems"
 require "coveralls"
 require "codeclimate-test-reporter"
+require "byebug"
 
 # force the environment to 'test'
 ENV["RACK_ENV"] = "test"

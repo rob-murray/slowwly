@@ -16,6 +16,11 @@ RSpec.describe Slowwly::DelayController do
         it "responds with correct header value" do
           expect(last_response.location).to eq("http://example.com")
         end
+
+        it "sets cors headers" do
+          expect(last_response.headers["Access-Control-Allow-Origin"]).to eq("*")
+          expect(last_response.headers["Access-Control-Allow-Methods"].split).to match_array(%w(GET POST OPTIONS))
+        end
       end
 
       context "without url" do
@@ -41,6 +46,11 @@ RSpec.describe Slowwly::DelayController do
       it "responds with correct header value" do
         expect(last_response.location).to eq("http://example.com")
       end
+
+      it "sets cors headers" do
+        expect(last_response.headers["Access-Control-Allow-Origin"]).to eq("*")
+        expect(last_response.headers["Access-Control-Allow-Methods"].split).to match_array(%w(GET POST OPTIONS))
+      end
     end
 
     context "given a request without delay time" do
@@ -55,6 +65,11 @@ RSpec.describe Slowwly::DelayController do
 
         it "responds with correct header value" do
           expect(last_response.location).to eq("http://example.com")
+        end
+
+        it "sets cors headers" do
+          expect(last_response.headers["Access-Control-Allow-Origin"]).to eq("*")
+          expect(last_response.headers["Access-Control-Allow-Methods"].split).to match_array(%w(GET POST OPTIONS))
         end
       end
 
@@ -85,6 +100,11 @@ RSpec.describe Slowwly::DelayController do
           expect(last_response.location).to eq("http://example.com")
         end
 
+        it "sets cors headers" do
+          expect(last_response.headers["Access-Control-Allow-Origin"]).to eq("*")
+          expect(last_response.headers["Access-Control-Allow-Methods"].split).to match_array(%w(GET POST OPTIONS))
+        end
+
         context "with post data" do
           before(:each) do
             post("/delay/1500/url/http://example.com", key: "value", other_key: "something else")
@@ -92,6 +112,11 @@ RSpec.describe Slowwly::DelayController do
 
           it "does not moan about bad request, invalid params, blah" do
             expect(last_response.status).to eq(307)
+          end
+
+          it "sets cors headers" do
+            expect(last_response.headers["Access-Control-Allow-Origin"]).to eq("*")
+            expect(last_response.headers["Access-Control-Allow-Methods"].split).to match_array(%w(GET POST OPTIONS))
           end
         end
       end
@@ -119,6 +144,11 @@ RSpec.describe Slowwly::DelayController do
       it "responds with correct header value" do
         expect(last_response.location).to eq("http://example.com")
       end
+
+      it "sets cors headers" do
+        expect(last_response.headers["Access-Control-Allow-Origin"]).to eq("*")
+        expect(last_response.headers["Access-Control-Allow-Methods"].split).to match_array(%w(GET POST OPTIONS))
+      end
     end
 
     context "given a request without delay time" do
@@ -133,6 +163,11 @@ RSpec.describe Slowwly::DelayController do
 
         it "responds with correct header value" do
           expect(last_response.location).to eq("http://example.com")
+        end
+
+        it "sets cors headers" do
+          expect(last_response.headers["Access-Control-Allow-Origin"]).to eq("*")
+          expect(last_response.headers["Access-Control-Allow-Methods"].split).to match_array(%w(GET POST OPTIONS))
         end
       end
 
