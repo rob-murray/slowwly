@@ -39,6 +39,8 @@ It's a simple Rack app so you can run it anywhere;
 $ git clone git@github.com:rob-murray/slowwly.git
 $ cd slowwly
 $ rackup
+# Or with foreman
+$ foreman start
 ```
 
 Feel free to run it anywhere you need or use the existing deployed service [here](http://slowwly.robertomurray.co.uk/).

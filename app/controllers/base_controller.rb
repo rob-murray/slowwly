@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require "sinatra"
 
 module Slowwly
@@ -26,9 +27,5 @@ module Slowwly
         ENV["RACK_ENV"] == "production"
       end
     end
-
-    private
-
-    # ...
   end
 end

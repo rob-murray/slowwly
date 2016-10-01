@@ -1,5 +1,6 @@
-require 'uri'
-require_relative '../slowwly'
+# frozen_string_literal: true
+require "uri"
+require_relative "../slowwly"
 
 module Slowwly
   class DelayRequest
@@ -14,13 +15,15 @@ module Slowwly
 
     # this seems like an hack to use the default when coercion fails
     def delay=(value)
-      super(value) rescue Slowwly.default_delay
+      super(value)
+    rescue
+      Slowwly.default_delay
     end
 
     def url=(value)
       return unless value
       escaped_url = URI.unescape(value)
-      super escaped_url.sub(/:\//, '://')
+      super escaped_url.sub(%r{:/}, "://")
     end
 
     def to_s
