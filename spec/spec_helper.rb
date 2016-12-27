@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 require "rubygems"
 require "coveralls"
-require "codeclimate-test-reporter"
+require "simplecov"
 require "byebug"
 
 # force the environment to 'test'
 ENV["RACK_ENV"] = "test"
 
-CodeClimate::TestReporter.start
+SimpleCov.start
 Coveralls.wear!
 
 Dir.glob("./spec/support/{helpers}/*.rb").each { |file| require file }
