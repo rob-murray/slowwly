@@ -50,7 +50,7 @@ GEM
     rack-test (0.6.3)
       rack (>= 1.0)
     rainbow (2.2.1)
-    rake (10.5.0)
+    rake (13.0.3)
     rspec (3.5.0)
       rspec-core (~> 3.5.0)
       rspec-expectations (~> 3.5.0)
@@ -115,7 +115,7 @@ DEPENDENCIES
   pry-byebug
   puma
   rack-test
-  rake (~> 10.1)
+  rake (~> 13.0)
   rspec
   rspec-html-matchers
   rubocop
